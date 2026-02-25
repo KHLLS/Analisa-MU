@@ -1,0 +1,34 @@
+player_name,position,transfer_type,fee_type,fee_million_gbp,net_value_gbp,club,transfer_window,season
+Leny Yoro,CB,In,Paid,52.0,-52.0,Lille,Summer,2024-25
+Manuel Ugarte,DM,In,Paid,51.0,-51.0,PSG,Summer,2024-25
+Matthijs de Ligt,CB,In,Paid,45.0,-45.0,Bayern Munich,Summer,2024-25
+Joshua Zirkzee,ST,In,Paid,36.0,-36.0,Bologna,Summer,2024-25
+Noussair Mazraoui,RB,In,Paid,15.0,-15.0,Bayern Munich,Summer,2024-25
+Sekou Kone,DM,In,Paid,1.0,-1.0,Guidars FC,Summer,2024-25
+Mason Greenwood,RW,Out,Paid,26.0,26.0,Marseille,Summer,2024-25
+Scott McTominay,CM,Out,Paid,25.7,25.7,Napoli,Summer,2024-25
+Aaron Wan-Bissaka,RB,Out,Paid,15.0,15.0,West Ham,Summer,2024-25
+Willy Kambwala,CB,Out,Paid,10.0,10.0,Villarreal,Summer,2024-25
+Alvaro Carreras,LB,Out,Paid,5.1,5.1,Benfica,Summer,2024-25
+Facundo Pellistri,RW,Out,Paid,5.1,5.1,Panathinaikos,Summer,2024-25
+Donny van de Beek,CM,Out,Paid,0.4,0.4,Girona,Summer,2024-25
+Raphael Varane,CB,Out,Free,0.0,0.0,Como,Summer,2024-25
+Anthony Martial,ST,Out,Free,0.0,0.0,Released,Summer,2024-25
+Jadon Sancho,LW,Out,Loan,,,Chelsea,Winter,2024-25
+Benjamin Sesko,ST,In,Paid,66.3,-66.3,RB Leipzig,Summer,2025-26
+Bryan Mbeumo,RW,In,Paid,65.0,-65.0,Brentford,Summer,2025-26
+Matheus Cunha,ST,In,Paid,62.5,-62.5,Wolves,Summer,2025-26
+Senne Lammens,GK,In,Paid,18.2,-18.2,Royal Antwerp,Summer,2025-26
+Diego Leon,LB,In,Paid,3.3,-3.3,Cerro Porteno,Summer,2025-26
+Harley Emsden-James,CB,In,Paid,1.0,-1.0,Southampton,Summer,2025-26
+Alejandro Garnacho,RW,Out,Paid,40.0,40.0,Chelsea,Summer,2025-26
+Antony,RW,Out,Paid,21.6,21.6,Real Betis,Summer,2025-26
+Christian Eriksen,CM,Out,Free,0.0,0.0,Wolfsburg,Summer,2025-26
+Victor Lindelof,CB,Out,Free,0.0,0.0,Aston Villa,Summer,2025-26
+Jonny Evans,CB,Out,Paid,,,Retired,Summer,2025-26
+Marcus Rashford,LW,Out,Loan,,,Barcelona,Winter,2025-26
+Rasmus Hojlund,ST,Out,Loan,,,Napoli,Winter,2025-26
+Andre Onana,GK,Out,Loan,,,Trabzonspor,Winter,2025-26
+Jadon Sancho,LW,Out,Loan,,,Aston Villa,Winter,2025-26
+Harry Amass,LB,Out,Loan,,,Norwich City,Winter,2025-26
+Toby Collyer,DM,Out,Loan,,,Hull City,Winter,2025-26
