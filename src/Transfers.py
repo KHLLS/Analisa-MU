@@ -1,6 +1,5 @@
 import pandas as pd
 from Load import Load
-import os
 
 
 class Transfers:
@@ -17,6 +16,12 @@ class Transfers:
             ]
         return df_filtered
 
+    def summary(self,season):
+        df = self.df
+        df_filtered = df[df['season'] == season]
+        total_player = df_filtered.groupby('fee_type')['player_name'].count()
+        return total_player.to_dict()
+
 class Paid(Transfers):
     def __init__(self, dataset):
         super().__init__(dataset)
@@ -24,14 +29,12 @@ class Paid(Transfers):
 class Loan(Transfers):
     def __init__(self, dataset):
         super().__init__(dataset)
-    
-    # def summary(self):
-    #     pass
-        
 
-paid  = Paid('../dataset/mu_transfers_clean.csv')
-loan  = Loan('../dataset/mu_transfers_clean.csv')
-# load  = Load()
-# print(Trx.d)
-print(paid.get_info(season='2025-26',trx_type='In'))
-print(loan.get_info(season='2025-26',trx_type='Out'))
+if __name__ == '__main__':
+    paid  = Paid('../dataset/mu_transfers_clean.csv')
+    loan  = Loan('../dataset/mu_transfers_clean.csv')
+    # load  = Load()
+    # print(Trx.d)
+    print(paid.get_info(season='2025-26',trx_type='In'))
+    print(paid.summary('2025-26'))
+    print(loan.get_info(season='2025-26',trx_type='Out'))
