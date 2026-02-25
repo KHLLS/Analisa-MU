@@ -14,7 +14,7 @@ Facundo Pellistri,RW,Out,Paid,5.1,5.1,Panathinaikos,Summer,2024-25
 Donny van de Beek,CM,Out,Paid,0.4,0.4,Girona,Summer,2024-25
 Raphael Varane,CB,Out,Free,0.0,0.0,Como,Summer,2024-25
 Anthony Martial,ST,Out,Free,0.0,0.0,Released,Summer,2024-25
-Jadon Sancho,LW,Out,Loan,0.0,0.0,Chelsea,Winter,2024-25
+Jadon Sancho,LW,Out,Loan,,,Chelsea,Winter,2024-25
 Benjamin Sesko,ST,In,Paid,66.3,-66.3,RB Leipzig,Summer,2025-26
 Bryan Mbeumo,RW,In,Paid,65.0,-65.0,Brentford,Summer,2025-26
 Matheus Cunha,ST,In,Paid,62.5,-62.5,Wolves,Summer,2025-26
@@ -25,10 +25,10 @@ Alejandro Garnacho,RW,Out,Paid,40.0,40.0,Chelsea,Summer,2025-26
 Antony,RW,Out,Paid,21.6,21.6,Real Betis,Summer,2025-26
 Christian Eriksen,CM,Out,Free,0.0,0.0,Wolfsburg,Summer,2025-26
 Victor Lindelof,CB,Out,Free,0.0,0.0,Aston Villa,Summer,2025-26
-Jonny Evans,CB,Out,Paid,0.0,0.0,Retired,Summer,2025-26
-Marcus Rashford,LW,Out,Loan,0.0,0.0,Barcelona,Winter,2025-26
-Rasmus Hojlund,ST,Out,Loan,0.0,0.0,Napoli,Winter,2025-26
-Andre Onana,GK,Out,Loan,0.0,0.0,Trabzonspor,Winter,2025-26
-Jadon Sancho,LW,Out,Loan,0.0,0.0,Aston Villa,Winter,2025-26
-Harry Amass,LB,Out,Loan,0.0,0.0,Norwich City,Winter,2025-26
-Toby Collyer,DM,Out,Loan,0.0,0.0,Hull City,Winter,2025-26
+Jonny Evans,CB,Out,Paid,,,Retired,Summer,2025-26
+Marcus Rashford,LW,Out,Loan,,,Barcelona,Winter,2025-26
+Rasmus Hojlund,ST,Out,Loan,,,Napoli,Winter,2025-26
+Andre Onana,GK,Out,Loan,,,Trabzonspor,Winter,2025-26
+Jadon Sancho,LW,Out,Loan,,,Aston Villa,Winter,2025-26
+Harry Amass,LB,Out,Loan,,,Norwich City,Winter,2025-26
+Toby Collyer,DM,Out,Loan,,,Hull City,Winter,2025-26
