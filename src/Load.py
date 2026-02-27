@@ -15,3 +15,9 @@ class Load:
                 print(f"error: {e}")
         else:
             print('Dataset Not Found')
+
+if __name__ == '__main__':
+    load_matches = Load('../dataset/mu_matches_clean.csv')
+    load_transfers = Load('../dataset/mu_transfers_clean.csv')
+    print(load_matches.df)
+    print(load_transfers.df)
