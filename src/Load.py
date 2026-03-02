@@ -17,7 +17,10 @@ class Load:
             print('Dataset Not Found')
 
 if __name__ == '__main__':
-    load_matches = Load('../dataset/mu_matches_clean.csv')
-    load_transfers = Load('../dataset/mu_transfers_clean.csv')
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    matches_file = os.path.join(BASE_DIR, '..', 'dataset', 'mu_matches_clean.csv')
+    transfers_file = os.path.join(BASE_DIR, '..', 'dataset', 'mu_transfers_clean.csv')
+    load_matches = Load(matches_file)
+    load_transfers = Load(transfers_file)
     print(load_matches.df)
     print(load_transfers.df)

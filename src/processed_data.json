@@ -1,0 +1,430 @@
+{
+    "seasons": {
+        "2024-25": {
+            "season": "2024-25",
+            "type": "Matches",
+            "total_match": 38,
+            "total_goals_for": 44,
+            "total_goals_against": 54,
+            "wins": 11,
+            "draws": 9,
+            "losses": 18,
+            "total_points": 42,
+            "win_rate": 28.947368421052634,
+            "total_player_in": 6,
+            "total_player_out": 10,
+            "total_spend": 200.0,
+            "total_income": 87.3,
+            "net_spend": 112.7
+        },
+        "2025-26": {
+            "season": "2025-26",
+            "type": "Matches",
+            "total_match": 27,
+            "total_goals_for": 48,
+            "total_goals_against": 37,
+            "wins": 13,
+            "draws": 9,
+            "losses": 5,
+            "total_points": 48,
+            "win_rate": 48.148148148148145,
+            "total_player_in": 6,
+            "total_player_out": 11,
+            "total_spend": 216.3,
+            "total_income": 61.6,
+            "net_spend": 154.70000000000002
+        }
+    },
+    "cumulative_trends": [
+        {
+            "date": "2024-08-16",
+            "season": "2024-25",
+            "matchweek": 1,
+            "cumulative_points": 3
+        },
+        {
+            "date": "2024-08-24",
+            "season": "2024-25",
+            "matchweek": 2,
+            "cumulative_points": 3
+        },
+        {
+            "date": "2024-09-01",
+            "season": "2024-25",
+            "matchweek": 3,
+            "cumulative_points": 3
+        },
+        {
+            "date": "2024-09-14",
+            "season": "2024-25",
+            "matchweek": 4,
+            "cumulative_points": 6
+        },
+        {
+            "date": "2024-09-21",
+            "season": "2024-25",
+            "matchweek": 5,
+            "cumulative_points": 7
+        },
+        {
+            "date": "2024-09-29",
+            "season": "2024-25",
+            "matchweek": 6,
+            "cumulative_points": 7
+        },
+        {
+            "date": "2024-10-06",
+            "season": "2024-25",
+            "matchweek": 7,
+            "cumulative_points": 8
+        },
+        {
+            "date": "2024-10-19",
+            "season": "2024-25",
+            "matchweek": 8,
+            "cumulative_points": 11
+        },
+        {
+            "date": "2024-10-27",
+            "season": "2024-25",
+            "matchweek": 9,
+            "cumulative_points": 11
+        },
+        {
+            "date": "2024-11-03",
+            "season": "2024-25",
+            "matchweek": 10,
+            "cumulative_points": 12
+        },
+        {
+            "date": "2024-11-10",
+            "season": "2024-25",
+            "matchweek": 11,
+            "cumulative_points": 15
+        },
+        {
+            "date": "2024-11-24",
+            "season": "2024-25",
+            "matchweek": 12,
+            "cumulative_points": 16
+        },
+        {
+            "date": "2024-12-01",
+            "season": "2024-25",
+            "matchweek": 13,
+            "cumulative_points": 19
+        },
+        {
+            "date": "2024-12-04",
+            "season": "2024-25",
+            "matchweek": 14,
+            "cumulative_points": 19
+        },
+        {
+            "date": "2024-12-07",
+            "season": "2024-25",
+            "matchweek": 15,
+            "cumulative_points": 19
+        },
+        {
+            "date": "2024-12-15",
+            "season": "2024-25",
+            "matchweek": 16,
+            "cumulative_points": 22
+        },
+        {
+            "date": "2024-12-22",
+            "season": "2024-25",
+            "matchweek": 17,
+            "cumulative_points": 22
+        },
+        {
+            "date": "2024-12-26",
+            "season": "2024-25",
+            "matchweek": 18,
+            "cumulative_points": 22
+        },
+        {
+            "date": "2024-12-30",
+            "season": "2024-25",
+            "matchweek": 19,
+            "cumulative_points": 22
+        },
+        {
+            "date": "2025-01-05",
+            "season": "2024-25",
+            "matchweek": 20,
+            "cumulative_points": 23
+        },
+        {
+            "date": "2025-01-16",
+            "season": "2024-25",
+            "matchweek": 21,
+            "cumulative_points": 26
+        },
+        {
+            "date": "2025-01-19",
+            "season": "2024-25",
+            "matchweek": 22,
+            "cumulative_points": 26
+        },
+        {
+            "date": "2025-01-26",
+            "season": "2024-25",
+            "matchweek": 23,
+            "cumulative_points": 29
+        },
+        {
+            "date": "2025-02-02",
+            "season": "2024-25",
+            "matchweek": 24,
+            "cumulative_points": 29
+        },
+        {
+            "date": "2025-02-16",
+            "season": "2024-25",
+            "matchweek": 25,
+            "cumulative_points": 29
+        },
+        {
+            "date": "2025-02-22",
+            "season": "2024-25",
+            "matchweek": 26,
+            "cumulative_points": 30
+        },
+        {
+            "date": "2025-02-26",
+            "season": "2024-25",
+            "matchweek": 27,
+            "cumulative_points": 33
+        },
+        {
+            "date": "2025-03-09",
+            "season": "2024-25",
+            "matchweek": 28,
+            "cumulative_points": 34
+        },
+        {
+            "date": "2025-03-16",
+            "season": "2024-25",
+            "matchweek": 29,
+            "cumulative_points": 37
+        },
+        {
+            "date": "2025-04-01",
+            "season": "2024-25",
+            "matchweek": 30,
+            "cumulative_points": 37
+        },
+        {
+            "date": "2025-04-06",
+            "season": "2024-25",
+            "matchweek": 31,
+            "cumulative_points": 38
+        },
+        {
+            "date": "2025-04-13",
+            "season": "2024-25",
+            "matchweek": 32,
+            "cumulative_points": 38
+        },
+        {
+            "date": "2025-04-20",
+            "season": "2024-25",
+            "matchweek": 33,
+            "cumulative_points": 38
+        },
+        {
+            "date": "2025-04-27",
+            "season": "2024-25",
+            "matchweek": 34,
+            "cumulative_points": 39
+        },
+        {
+            "date": "2025-05-04",
+            "season": "2024-25",
+            "matchweek": 35,
+            "cumulative_points": 39
+        },
+        {
+            "date": "2025-05-11",
+            "season": "2024-25",
+            "matchweek": 36,
+            "cumulative_points": 39
+        },
+        {
+            "date": "2025-05-16",
+            "season": "2024-25",
+            "matchweek": 37,
+            "cumulative_points": 39
+        },
+        {
+            "date": "2025-05-25",
+            "season": "2024-25",
+            "matchweek": 38,
+            "cumulative_points": 42
+        },
+        {
+            "date": "2025-08-17",
+            "season": "2025-26",
+            "matchweek": 1,
+            "cumulative_points": 0
+        },
+        {
+            "date": "2025-08-24",
+            "season": "2025-26",
+            "matchweek": 2,
+            "cumulative_points": 1
+        },
+        {
+            "date": "2025-08-30",
+            "season": "2025-26",
+            "matchweek": 3,
+            "cumulative_points": 4
+        },
+        {
+            "date": "2025-09-14",
+            "season": "2025-26",
+            "matchweek": 4,
+            "cumulative_points": 4
+        },
+        {
+            "date": "2025-09-20",
+            "season": "2025-26",
+            "matchweek": 5,
+            "cumulative_points": 7
+        },
+        {
+            "date": "2025-09-27",
+            "season": "2025-26",
+            "matchweek": 6,
+            "cumulative_points": 7
+        },
+        {
+            "date": "2025-10-04",
+            "season": "2025-26",
+            "matchweek": 7,
+            "cumulative_points": 10
+        },
+        {
+            "date": "2025-10-19",
+            "season": "2025-26",
+            "matchweek": 8,
+            "cumulative_points": 13
+        },
+        {
+            "date": "2025-10-25",
+            "season": "2025-26",
+            "matchweek": 9,
+            "cumulative_points": 16
+        },
+        {
+            "date": "2025-11-01",
+            "season": "2025-26",
+            "matchweek": 10,
+            "cumulative_points": 17
+        },
+        {
+            "date": "2025-11-08",
+            "season": "2025-26",
+            "matchweek": 11,
+            "cumulative_points": 18
+        },
+        {
+            "date": "2025-11-24",
+            "season": "2025-26",
+            "matchweek": 12,
+            "cumulative_points": 18
+        },
+        {
+            "date": "2025-11-30",
+            "season": "2025-26",
+            "matchweek": 13,
+            "cumulative_points": 21
+        },
+        {
+            "date": "2025-12-04",
+            "season": "2025-26",
+            "matchweek": 14,
+            "cumulative_points": 22
+        },
+        {
+            "date": "2025-12-08",
+            "season": "2025-26",
+            "matchweek": 15,
+            "cumulative_points": 25
+        },
+        {
+            "date": "2025-12-15",
+            "season": "2025-26",
+            "matchweek": 16,
+            "cumulative_points": 26
+        },
+        {
+            "date": "2025-12-21",
+            "season": "2025-26",
+            "matchweek": 17,
+            "cumulative_points": 26
+        },
+        {
+            "date": "2025-12-26",
+            "season": "2025-26",
+            "matchweek": 18,
+            "cumulative_points": 29
+        },
+        {
+            "date": "2025-12-30",
+            "season": "2025-26",
+            "matchweek": 19,
+            "cumulative_points": 30
+        },
+        {
+            "date": "2026-01-04",
+            "season": "2025-26",
+            "matchweek": 20,
+            "cumulative_points": 31
+        },
+        {
+            "date": "2026-01-07",
+            "season": "2025-26",
+            "matchweek": 21,
+            "cumulative_points": 32
+        },
+        {
+            "date": "2026-01-17",
+            "season": "2025-26",
+            "matchweek": 22,
+            "cumulative_points": 35
+        },
+        {
+            "date": "2026-01-25",
+            "season": "2025-26",
+            "matchweek": 23,
+            "cumulative_points": 38
+        },
+        {
+            "date": "2026-02-01",
+            "season": "2025-26",
+            "matchweek": 24,
+            "cumulative_points": 41
+        },
+        {
+            "date": "2026-02-07",
+            "season": "2025-26",
+            "matchweek": 25,
+            "cumulative_points": 44
+        },
+        {
+            "date": "2026-02-10",
+            "season": "2025-26",
+            "matchweek": 26,
+            "cumulative_points": 45
+        },
+        {
+            "date": "2026-02-23",
+            "season": "2025-26",
+            "matchweek": 27,
+            "cumulative_points": 48
+        }
+    ]
+}

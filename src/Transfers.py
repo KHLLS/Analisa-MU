@@ -1,5 +1,6 @@
 import pandas as pd
 from Load import Load
+import os
 
 
 class Transfers:
@@ -21,8 +22,8 @@ class Transfers:
         df_filtered = df[df['season'] == season]
         total_in = len(df_filtered[df_filtered['transfer_type'] == 'In'])
         total_out = len(df_filtered[df_filtered['transfer_type'] == 'Out'])
-        total_spend = df_filtered[df_filtered['transfer_type'] == 'In']['fee_million_gbp'].sum()
-        total_income = df_filtered[df_filtered['transfer_type'] == 'Out']['fee_million_gbp'].sum()
+        total_spend = float(df_filtered[df_filtered['transfer_type'] == 'In']['fee_million_gbp'].sum())
+        total_income = float(df_filtered[df_filtered['transfer_type'] == 'Out']['fee_million_gbp'].sum())
         net_spend = total_spend - total_income
 
         return {
@@ -43,8 +44,10 @@ class Loan(Transfers):
         super().__init__(dataset)
 
 if __name__ == '__main__':
-    paid  = Paid('../dataset/mu_transfers_clean.csv')
-    loan  = Loan('../dataset/mu_transfers_clean.csv')
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    transfers_file = os.path.join(BASE_DIR, '..', 'dataset', 'mu_transfers_clean.csv')
+    paid  = Paid(transfers_file)
+    loan  = Loan(transfers_file)
     # print(paid.get_info(season='2025-26',trx_type='In'))
     print(paid.summary_by_season('2024-25'))
     # print(loan.get_info(season='2025-26',trx_type='Out'))
