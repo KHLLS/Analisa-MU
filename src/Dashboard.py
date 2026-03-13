@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import os
 import json
 from Transfers import Transfers, Paid, Loan
 from MatchManager import MatchManager
@@ -10,31 +9,45 @@ from DataExporter import DataExporter
 
 st.set_page_config(page_title="MU Analysis & Management", layout="wide")
 
-# Paths
-MATCHES_JSON = 'matches_records.json'
-JSON_PATH = 'processed_data.json'
-TRANSFERS_PATH = '../dataset/mu_transfers_clean.csv'
-MATCHES_CSV = '../dataset/mu_matches_clean.csv'
-SEASONS = ['2024-25', '2025-26']
+# Paths — semua absolute via BASE_DIR
+BASE_DIR = __file__.replace('\\', '/').rsplit('/', 1)[0]
+MATCHES_JSON   = BASE_DIR + '/matches_records.json'
+JSON_PATH      = BASE_DIR + '/processed_data.json'
+TRANSFERS_PATH = BASE_DIR + '/../dataset/mu_transfers_clean.csv'
+MATCHES_CSV    = BASE_DIR + '/../dataset/mu_matches_clean.csv'
+SEASONS        = ['2024-25', '2025-26']
 
 def regenerate():
-    exporter = DataExporter(MATCHES_JSON, TRANSFERS_PATH, SEASONS)
-    exporter.export_all()
+    exporter = DataExporter(
+        matches_json_path = MATCHES_JSON,
+        transfers_path    = TRANSFERS_PATH,
+        seasons           = SEASONS
+    )
+    data = exporter.export_all()
+    st.session_state['all_data'] = data  # ← simpan ke session_state
+    return data
 
 def load_json_data():
-    if os.path.exists(JSON_PATH):
+    # coba dari session_state dulu
+    if 'all_data' in st.session_state:
+        return st.session_state['all_data']
+    # fallback ke file
+    try:
         with open(JSON_PATH, 'r') as f:
-            return json.load(f)
-    return None
+            data = json.load(f)
+            st.session_state['all_data'] = data
+            return data
+    except FileNotFoundError:
+        return None
 
 # Init MatchManager
-manager = MatchManager("matches_records.json")
+manager = MatchManager(MATCHES_JSON)  # ← absolute path
 if not manager.data:
     manager.import_from_csv(MATCHES_CSV)
     regenerate()
 
 all_data  = load_json_data()
-transfers = Transfers(TRANSFERS_PATH)
+transfers = Transfers(TRANSFERS_PATH)  # ← absolute path
 
 # Sidebar
 with st.sidebar:
