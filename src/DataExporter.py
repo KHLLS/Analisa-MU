@@ -1,5 +1,4 @@
 import json
-import os
 import pandas as pd
 from Transfers import Transfers
 
@@ -8,7 +7,6 @@ class DataExporter:
         self.matches_json_path = matches_json_path
         self.transfers = Transfers(transfers_path)
         self.seasons = seasons
-        self.base_dir = os.path.dirname(os.path.abspath(__file__))
 
     def _load_matches_df(self):
         with open(self.matches_json_path, 'r') as f:
@@ -33,16 +31,13 @@ class DataExporter:
         # 1. Process Season Summaries
         for season in self.seasons:
             df_season = df_matches[df_matches['season'] == season]
-
             if df_season.empty:
                 continue
-
             total_match = len(df_season)
             wins   = int((df_season['result'] == 'W').sum())
             draws  = int((df_season['result'] == 'D').sum())
             losses = int((df_season['result'] == 'L').sum())
             points = int(df_season['points'].sum())
-
             m_sum = {
                 'season'              : season,
                 'total_match'         : total_match,
@@ -55,7 +50,6 @@ class DataExporter:
                 'win_rate'            : round(wins / total_match * 100, 1),
                 'clean_sheets'        : int(df_season['clean_sheet'].sum())
             }
-
             t_sum = self.transfers.summary_by_season(season)
             all_data["seasons"][season] = {**m_sum, **t_sum}
 
@@ -64,23 +58,8 @@ class DataExporter:
         df_sorted['date'] = df_sorted['date'].astype(str)
         df_sorted['cumulative_points'] = df_sorted.groupby('season')['points'].cumsum()
         df_sorted['matchweek'] = df_sorted.groupby('season').cumcount() + 1
-
         all_data["cumulative_trends"] = df_sorted[
             ['date', 'season', 'matchweek', 'cumulative_points']
         ].to_dict(orient='records')
 
-        # 3. Save to JSON
-        output_path = os.path.join(self.base_dir, "processed_data.json")
-        with open(output_path, "w") as f:
-            json.dump(all_data, f, indent=4)
-
-        print(f"Data successfully exported to {output_path}")
-
-if __name__ == "__main__":
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    matches_json = os.path.join(BASE_DIR, 'matches_records.json')
-    t_path       = os.path.join(BASE_DIR, '..', 'dataset', 'mu_transfers_clean.csv')
-    seasons      = ['2024-25', '2025-26']
-
-    exporter = DataExporter(matches_json, t_path, seasons)
-    exporter.export_all()
+        return all_data  # ← return dict, bukan save ke file
