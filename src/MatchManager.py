@@ -57,6 +57,15 @@ class MatchManager:
         self._save_json()
         print(f"Data untuk tanggal {date} berhasil diperbarui.")
         return True
+    
+    def delete(self,date):
+        if date not in self.data:
+            print(f"Gagal: Data untuk tanggal {date} tidak ditemukan.")
+            return False
+        del self.data[date]
+        self._save_json()
+        return True
+
 
 if __name__ == "__main__":
     manager = MatchManager()
@@ -74,7 +83,7 @@ if __name__ == "__main__":
         "result": "W",
         "points": 3
     }
-    manager.create("2026-03-05", new_match)
+    # manager.create("2026-03-05", new_match)
 
     print("Cek Data Tanggal 2026-03-05:")
     print(manager.read("2026-03-05"))
@@ -83,7 +92,12 @@ if __name__ == "__main__":
         "goals_for": 3,
         "result": "W"
     }
-    manager.update("2026-03-05", update_data)
+    # manager.update("2026-03-05", update_data)
     
-    print("Data Setelah Update:")
+    print("Data Sebelum Delete:")
     print(manager.read("2026-03-05"))
+
+    manager.delete("2026-03-05")
+    print("Data Setelah Delete:")
+    print(manager.read("2026-03-05"))
+

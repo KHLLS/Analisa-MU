@@ -2,7 +2,6 @@
     "seasons": {
         "2024-25": {
             "season": "2024-25",
-            "type": "Matches",
             "total_match": 38,
             "total_goals_for": 44,
             "total_goals_against": 54,
@@ -10,7 +9,8 @@
             "draws": 9,
             "losses": 18,
             "total_points": 42,
-            "win_rate": 28.947368421052634,
+            "win_rate": 28.9,
+            "clean_sheets": 10,
             "total_player_in": 6,
             "total_player_out": 10,
             "total_spend": 200.0,
@@ -19,15 +19,15 @@
         },
         "2025-26": {
             "season": "2025-26",
-            "type": "Matches",
-            "total_match": 27,
-            "total_goals_for": 48,
-            "total_goals_against": 37,
-            "wins": 13,
+            "total_match": 28,
+            "total_goals_for": 50,
+            "total_goals_against": 38,
+            "wins": 14,
             "draws": 9,
             "losses": 5,
-            "total_points": 48,
-            "win_rate": 48.148148148148145,
+            "total_points": 51,
+            "win_rate": 50.0,
+            "clean_sheets": 5,
             "total_player_in": 6,
             "total_player_out": 11,
             "total_spend": 216.3,
@@ -425,6 +425,12 @@
             "season": "2025-26",
             "matchweek": 27,
             "cumulative_points": 48
+        },
+        {
+            "date": "2026-03-02",
+            "season": "2025-26",
+            "matchweek": 28,
+            "cumulative_points": 51
         }
     ]
 }

@@ -32,7 +32,8 @@ class Transfers:
             'total_player_out': total_out,
             'total_spend': total_spend,
             'total_income': total_income,
-            'net_spend': net_spend
+            'net_spend': net_spend,
+            'goal':int(df_filtered['goal'].sum())
         }
     
 class Paid(Transfers):
@@ -44,10 +45,8 @@ class Loan(Transfers):
         super().__init__(dataset)
 
 if __name__ == '__main__':
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    transfers_file = os.path.join(BASE_DIR, '..', 'dataset', 'mu_transfers_clean.csv')
-    paid  = Paid(transfers_file)
-    loan  = Loan(transfers_file)
+    paid  = Paid('../dataset/mu_transfers_clean.csv')
+    loan  = Loan('../dataset/mu_transfers_clean.csv')
     # print(paid.get_info(season='2025-26',trx_type='In'))
-    print(paid.summary_by_season('2024-25'))
+    print(paid.summary_by_season('2025-26'))
     # print(loan.get_info(season='2025-26',trx_type='Out'))

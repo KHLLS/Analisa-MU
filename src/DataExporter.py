@@ -1,17 +1,30 @@
 import json
 import os
 import pandas as pd
-from Matches import Matches
 from Transfers import Transfers
 
 class DataExporter:
-    def __init__(self, matches_path, transfers_path, seasons):
-        self.matches = Matches(matches_path)
+    def __init__(self, matches_json_path, transfers_path, seasons):
+        self.matches_json_path = matches_json_path
         self.transfers = Transfers(transfers_path)
         self.seasons = seasons
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
 
+    def _load_matches_df(self):
+        with open(self.matches_json_path, 'r') as f:
+            data = json.load(f)
+        df = pd.DataFrame.from_dict(data, orient='index')
+        df.index.name = 'date'
+        df = df.reset_index()
+        df['date'] = pd.to_datetime(df['date'])
+        df['goals_for'] = pd.to_numeric(df['goals_for'], errors='coerce').fillna(0).astype(int)
+        df['goals_against'] = pd.to_numeric(df['goals_against'], errors='coerce').fillna(0).astype(int)
+        df['points'] = pd.to_numeric(df['points'], errors='coerce').fillna(0).astype(int)
+        df['clean_sheet'] = (df['goals_against'] == 0).astype(int)
+        return df
+
     def export_all(self):
+        df_matches = self._load_matches_df()
         all_data = {
             "seasons": {},
             "cumulative_trends": []
@@ -19,38 +32,55 @@ class DataExporter:
 
         # 1. Process Season Summaries
         for season in self.seasons:
-            # Matches Summary
-            self.matches.get_data_by_season(season)
-            m_sum = self.matches.summary_season()
-            
-            # Transfers Summary
+            df_season = df_matches[df_matches['season'] == season]
+
+            if df_season.empty:
+                continue
+
+            total_match = len(df_season)
+            wins   = int((df_season['result'] == 'W').sum())
+            draws  = int((df_season['result'] == 'D').sum())
+            losses = int((df_season['result'] == 'L').sum())
+            points = int(df_season['points'].sum())
+
+            m_sum = {
+                'season'              : season,
+                'total_match'         : total_match,
+                'total_goals_for'     : int(df_season['goals_for'].sum()),
+                'total_goals_against' : int(df_season['goals_against'].sum()),
+                'wins'                : wins,
+                'draws'               : draws,
+                'losses'              : losses,
+                'total_points'        : points,
+                'win_rate'            : round(wins / total_match * 100, 1),
+                'clean_sheets'        : int(df_season['clean_sheet'].sum())
+            }
+
             t_sum = self.transfers.summary_by_season(season)
-            
-            # Combine into season key
             all_data["seasons"][season] = {**m_sum, **t_sum}
 
-        # 2. Process Trends (for the line chart)
-        # We use the full dataframe from matches to calculate cumulative points
-        df_matches = self.matches.df.sort_values('date').copy()
-        df_matches['cumulative_points'] = df_matches.groupby('season')['points'].cumsum()
-        df_matches['matchweek'] = df_matches.groupby('season').cumcount() + 1
-        
-        # Select relevant columns for JSON to keep it lightweight
-        trend_data = df_matches[['date', 'season', 'matchweek', 'cumulative_points']].to_dict(orient='records')
-        all_data["cumulative_trends"] = trend_data
+        # 2. Process Trends
+        df_sorted = df_matches.sort_values('date').copy()
+        df_sorted['date'] = df_sorted['date'].astype(str)
+        df_sorted['cumulative_points'] = df_sorted.groupby('season')['points'].cumsum()
+        df_sorted['matchweek'] = df_sorted.groupby('season').cumcount() + 1
+
+        all_data["cumulative_trends"] = df_sorted[
+            ['date', 'season', 'matchweek', 'cumulative_points']
+        ].to_dict(orient='records')
 
         # 3. Save to JSON
         output_path = os.path.join(self.base_dir, "processed_data.json")
         with open(output_path, "w") as f:
             json.dump(all_data, f, indent=4)
-        
+
         print(f"Data successfully exported to {output_path}")
 
 if __name__ == "__main__":
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    m_path = os.path.join(BASE_DIR, '..', 'dataset', 'mu_matches_clean.csv')
-    t_path = os.path.join(BASE_DIR, '..', 'dataset', 'mu_transfers_clean.csv')
-    seasons = ['2024-25', '2025-26']
-    
-    exporter = DataExporter(m_path, t_path, seasons)
+    matches_json = os.path.join(BASE_DIR, 'matches_records.json')
+    t_path       = os.path.join(BASE_DIR, '..', 'dataset', 'mu_transfers_clean.csv')
+    seasons      = ['2024-25', '2025-26']
+
+    exporter = DataExporter(matches_json, t_path, seasons)
     exporter.export_all()
