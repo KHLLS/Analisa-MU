@@ -77,9 +77,8 @@ class DataExporter:
         print(f"Data successfully exported to {output_path}")
 
 if __name__ == "__main__":
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    matches_json = os.path.join(BASE_DIR, 'matches_records.json')
-    t_path       = os.path.join(BASE_DIR, '..', 'dataset', 'mu_transfers_clean.csv')
+    matches_json = 'matches_records.json'
+    t_path       = '../dataset/mu_transfers_clean.csv'
     seasons      = ['2024-25', '2025-26']
 
     exporter = DataExporter(matches_json, t_path, seasons)
